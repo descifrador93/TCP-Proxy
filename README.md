@@ -7,21 +7,18 @@ A simple TCP proxy implemented in Python that allows you to intercept and modify
 ## Usage
 - Make sure you have Python installed on your system.
 
-- Run the proxy server by executing the following command:
+- Example: Fire up the Proxy using following command.
 
 ```shell
-python proxy.py [localhost] [localport] [remotehost] [remoteport] [receive_first]
+tim@kali: sudo python proxy.py 192.168.1.203 21
+ftp.sun.ac.za 21 True
 ```
 
+- Now launch any FTP client and set it to use localhost and port 21 as its remote host and port.
 
-Replace `[localhost]`, `[localport]`, `[remotehost]`, `[remoteport]`, and `[receive_first]` with the appropriate values.
+- In another terminal on the Kali machine, start an FTP session to the Kali machine's IP address using the default port, 21:
 
-
-## Parameters
-
-- `[localhost]`: The local address the proxy will bind to.
-- `[localport]`: The local port the proxy will listen on.
-- `[remotehost]`: The remote host the proxy will forward traffic to.
-- `[remoteport]`: The remote port the proxy will forward traffic to.
-- `[receive_first]`: Whether the proxy should wait for data from the remote host before sending to the client (True/False).
-
+```shell
+tim@kali:$ ftp 192.168.1.203
+```
+You will get amazing results after that.
